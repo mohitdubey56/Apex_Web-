@@ -1,0 +1,153 @@
+/* ============================================================
+   APEX COMPUTER INSTITUTE — testimonials.css
+   ============================================================ */
+
+/* ── Stats Bar ────────────────────────────────────────────── */
+.testi-stats-bar { background: var(--primary); padding: 48px 0; }
+.testi-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0; text-align: center;
+}
+.testi-stat {
+  padding: 20px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.testi-stat:last-child { border-right: none; }
+.testi-stat-num {
+  font-family: var(--font-heading);
+  font-size: 2.5rem; font-weight: 800;
+  color: var(--secondary);
+  display: block; line-height: 1; margin-bottom: 6px;
+}
+.testi-stat-label { color: rgba(255,255,255,0.72); font-size: 0.9rem; font-family: var(--font-heading); }
+
+/* ── Reviews Grid ─────────────────────────────────────────── */
+/* Fixed: minmax reduced from 320px to 280px to prevent overflow on small mobiles */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+.review-card-full {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition);
+}
+.review-card-full:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(245,166,35,0.3);
+}
+.rcf-top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.rcf-avatar {
+  width: 60px; height: 60px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+.rcf-name   { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 3px; }
+.rcf-course { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+.rcf-stars  { color: var(--secondary); font-size: 0.95rem; letter-spacing: 2px; margin-left: auto; }
+.rcf-quote  {
+  font-size: 0.92rem; line-height: 1.8; color: var(--text-secondary);
+  font-style: italic; position: relative; padding-left: 20px;
+}
+.rcf-quote::before {
+  content: '"'; position: absolute; left: 0; top: -6px;
+  font-size: 2.5rem; color: var(--secondary);
+  font-style: normal; line-height: 1; font-family: Georgia, serif;
+}
+.rcf-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 16px; font-size: 0.75rem; color: var(--text-muted);
+  font-family: var(--font-heading);
+}
+.rcf-tag i { color: var(--accent); }
+
+/* ── Google Reviews Placeholder ───────────────────────────── */
+.google-reviews-placeholder {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  padding: 40px; text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.google-logo { display: flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 20px; }
+.google-logo span { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
+.google-rating-big { font-family: var(--font-heading); font-size: 4rem; font-weight: 800; color: var(--text-primary); line-height: 1; }
+.google-stars-big  { color: var(--secondary); font-size: 1.8rem; letter-spacing: 3px; margin: 8px 0; }
+.google-review-count { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px; }
+.google-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 28px; border-radius: var(--radius-sm);
+  border: 2px solid var(--border); color: var(--text-secondary);
+  font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600;
+  transition: all var(--transition);
+}
+.google-link:hover { border-color: var(--primary); color: var(--primary); }
+
+/* ── Video Placeholder ────────────────────────────────────── */
+.video-placeholder {
+  background: linear-gradient(135deg, #0A1520, #1A3C6E);
+  border-radius: var(--radius-xl); overflow: hidden;
+  aspect-ratio: 16/9; max-width: 800px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; cursor: pointer; box-shadow: var(--shadow-lg);
+}
+.video-placeholder::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1588072432836-e10032774350?w=800') center/cover;
+  opacity: 0.3; filter: contrast(1.08) saturate(1.2);
+}
+.play-btn {
+  position: relative; z-index: 1;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--secondary);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; color: #fff;
+  box-shadow: 0 8px 32px rgba(245,166,35,0.5);
+  transition: all var(--transition);
+}
+.play-btn:hover { transform: scale(1.1); background: var(--secondary-dark); }
+.video-label {
+  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+  color: #fff; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500;
+  text-align: center; z-index: 1; white-space: nowrap;
+}
+
+/* ── WhatsApp CTA ─────────────────────────────────────────── */
+.share-cta {
+  background: linear-gradient(135deg, #128C7E, #25D366);
+  border-radius: var(--radius-xl); padding: 48px; text-align: center;
+}
+.share-cta h2 { color: #fff; margin-bottom: 12px; }
+.share-cta p  { color: rgba(255,255,255,0.85); margin-bottom: 28px; }
+.share-cta .btn { background: #fff; color: #128C7E; border-color: #fff; font-weight: 700; }
+.share-cta .btn:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .testi-stats-grid { grid-template-columns: 1fr; }
+  .testi-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .testi-stat:last-child { border-bottom: none; }
+  .share-cta { padding: 36px 24px; }
+}
+@media (max-width: 600px) {
+  /* Force single column on small mobile */
+  .reviews-grid { grid-template-columns: 1fr; }
+  .review-card-full { padding: 24px 20px; }
+  .rcf-stars { margin-left: 0; }
+  .google-reviews-placeholder { padding: 28px 20px; }
+}
+@media (max-width: 480px) {
+  .testi-stats-bar { padding: 32px 0; }
+  .testi-stat-num  { font-size: 2rem; }
+  .share-cta       { padding: 28px 16px; border-radius: var(--radius-lg); }
+  .google-rating-big { font-size: 3rem; }
+  .google-stars-big  { font-size: 1.4rem; }
+}

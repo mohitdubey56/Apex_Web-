@@ -1,0 +1,23 @@
+/* 404.css */
+.error-page { min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--bg); padding:40px 24px; }
+.error-inner { max-width:600px; width:100%; text-align:center; }
+.error-logo { margin:0 auto 40px; display:flex; justify-content:center; }
+.error-illustration { margin:0 auto 40px; width:220px; height:160px; position:relative; }
+/* Broken monitor using CSS divs */
+.monitor-body { width:180px; height:120px; background:var(--card-bg); border:3px solid var(--border); border-radius:12px; position:absolute; left:50%; top:0; transform:translateX(-50%); display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:var(--shadow); }
+.monitor-screen { width:148px; height:88px; background:linear-gradient(135deg,#0A1520,#1A3C6E); border-radius:6px; display:flex; align-items:center; justify-content:center; position:relative; }
+.monitor-404 { font-family:'Poppins',sans-serif; font-size:2.2rem; font-weight:800; color:rgba(245,166,35,0.8); }
+.monitor-crack { position:absolute; top:0; left:0; right:0; bottom:0; pointer-events:none; }
+.monitor-crack::before { content:''; position:absolute; top:10px; left:40px; width:3px; height:70px; background:rgba(255,255,255,0.15); transform:rotate(20deg); box-shadow:20px 0 0 rgba(255,255,255,0.08); }
+.monitor-crack::after { content:''; position:absolute; top:20px; left:80px; width:2px; height:50px; background:rgba(255,255,255,0.1); transform:rotate(-15deg); }
+.monitor-stand { width:40px; height:20px; background:var(--border); position:absolute; bottom:0; left:50%; transform:translateX(-50%); border-radius:0 0 4px 4px; }
+.monitor-base { width:100px; height:10px; background:var(--border); position:absolute; bottom:0; left:50%; transform:translateX(-50%); border-radius:5px; }
+.error-num { font-family:'Poppins',sans-serif; font-size:clamp(5rem,18vw,9rem); font-weight:800; color:var(--primary); line-height:1; margin-bottom:8px; letter-spacing:-4px; }
+[data-theme="dark"] .error-num { color:var(--primary); }
+.error-title { font-size:clamp(1.2rem,4vw,1.8rem); font-weight:700; color:var(--text-primary); margin-bottom:12px; }
+.error-msg { font-size:0.97rem; color:var(--text-secondary); margin-bottom:36px; line-height:1.75; max-width:440px; margin-left:auto; margin-right:auto; }
+.error-actions { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
+.error-nav { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.error-nav a { color:var(--text-secondary); font-size:0.85rem; font-family:'Poppins',sans-serif; font-weight:500; transition:color var(--transition); }
+.error-nav a:hover { color:var(--primary); }
+.error-nav .sep { color:var(--border); }

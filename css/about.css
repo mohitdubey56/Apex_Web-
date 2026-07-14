@@ -1,0 +1,270 @@
+/* ============================================================
+   APEX COMPUTER INSTITUTE — about.css
+   ============================================================ */
+
+/* ── Mission Grid ─────────────────────────────────────────── */
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+.mission-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-light);
+  border-top: 4px solid var(--secondary);
+}
+.mission-card .card-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: rgba(245,166,35,0.12);
+  color: var(--secondary);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin-bottom: 18px;
+}
+.mission-card h3 { margin-bottom: 12px; font-size: 1.1rem; }
+.mission-card p  { font-size: 0.9rem; line-height: 1.75; }
+
+/* ── Story Section ─────────────────────────────────────────── */
+.story-section { background: var(--bg-alt); }
+.story-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.story-text h2 { margin-bottom: 16px; }
+.story-text p  { margin-bottom: 16px; font-size: 0.95rem; line-height: 1.8; }
+.story-milestones {
+  display: flex; flex-direction: column;
+  gap: 0; margin-top: 32px;
+  position: relative;
+}
+.story-milestones::before {
+  content: '';
+  position: absolute;
+  left: 22px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--secondary), transparent);
+}
+.milestone-item {
+  display: flex; gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 28px;
+  position: relative;
+}
+.milestone-dot {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--secondary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(245,166,35,0.3);
+  position: relative; z-index: 1;
+}
+.milestone-body h4 { font-size: 0.95rem; margin-bottom: 4px; }
+.milestone-body p  { font-size: 0.84rem; color: var(--text-secondary); margin: 0; }
+
+.story-image { position: relative; }
+.story-image img {
+  border-radius: var(--radius-xl);
+  width: 100%; object-fit: cover;
+  max-height: 500px;
+  filter: contrast(1.08) saturate(1.2) brightness(1.02);
+  box-shadow: var(--shadow-lg);
+}
+.story-image-badge {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  box-shadow: var(--shadow-md);
+  display: flex; align-items: center; gap: 12px;
+  border: 1px solid var(--border-light);
+}
+.story-image-badge .badge-num {
+  font-family: var(--font-heading);
+  font-size: 1.8rem; font-weight: 800;
+  color: var(--secondary); line-height: 1;
+}
+.story-image-badge .badge-txt {
+  font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;
+}
+
+/* ── Faculty Profile ──────────────────────────────────────── */
+.faculty-section { background: var(--bg); }
+.faculty-profile {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+}
+.faculty-top {
+  background: linear-gradient(135deg, #0A1520, #1A3C6E);
+  padding: 48px;
+  display: flex; gap: 36px; align-items: center;
+}
+.faculty-avatar-lg {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 2.8rem; font-weight: 800; color: #fff;
+  border: 5px solid rgba(245,166,35,0.6);
+  flex-shrink: 0;
+}
+.faculty-header-info { flex: 1; min-width: 0; }
+.faculty-header-info h2 { color: #fff; margin-bottom: 8px; }
+.faculty-header-info .title-pill {
+  display: inline-block;
+  background: rgba(245,166,35,0.2); color: var(--secondary);
+  padding: 6px 18px; border-radius: 100px;
+  font-size: 0.85rem; font-family: var(--font-heading); font-weight: 600;
+  border: 1px solid rgba(245,166,35,0.35);
+  margin-bottom: 20px;
+}
+.faculty-credentials { display: flex; flex-wrap: wrap; gap: 10px; }
+.cred-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px; padding: 8px 14px;
+  font-size: 0.82rem; color: rgba(255,255,255,0.85);
+}
+.cred-badge i { color: var(--secondary); }
+
+.faculty-body {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.faculty-bio-text p { font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 16px; }
+.spec-list { display: flex; flex-direction: column; gap: 10px; }
+.spec-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-alt);
+  border-radius: 8px;
+  font-size: 0.86rem; color: var(--text-secondary);
+}
+.spec-item i { color: var(--secondary); width: 18px; text-align: center; }
+.faculty-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px; margin-top: 24px;
+}
+.fstat {
+  background: var(--bg-alt);
+  border-radius: var(--radius); padding: 18px; text-align: center;
+  border: 1px solid var(--border);
+}
+.fstat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.8rem; font-weight: 800; color: var(--secondary);
+  line-height: 1; margin-bottom: 4px;
+}
+.fstat span { font-size: 0.76rem; color: var(--text-secondary); font-family: var(--font-heading); font-weight: 500; }
+
+/* ── Values Grid ──────────────────────────────────────────── */
+.values-section { background: var(--bg-alt); }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.value-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px; text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition);
+}
+.value-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: rgba(245,166,35,0.3); }
+.value-icon {
+  width: 72px; height: 72px;
+  border-radius: 18px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem; margin: 0 auto 20px;
+  transition: all var(--transition);
+}
+.value-icon.navy  { background: rgba(26,60,110,0.1);  color: var(--primary); }
+.value-icon.amber { background: rgba(245,166,35,0.12); color: var(--secondary); }
+.value-icon.green { background: rgba(46,204,113,0.12); color: var(--accent-dark); }
+.value-icon.red   { background: rgba(231,76,60,0.1);  color: var(--danger); }
+.value-card:hover .value-icon { background: var(--primary); color: #fff; }
+.value-card h4 { font-size: 1.05rem; margin-bottom: 10px; }
+.value-card p  { font-size: 0.87rem; line-height: 1.7; }
+
+/* ── Infrastructure ───────────────────────────────────────── */
+.infra-section { background: var(--bg); }
+.infra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+.infra-item {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 14px;
+  padding: 28px 20px;
+  background: var(--card-bg);
+  border-radius: var(--radius); text-align: center;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  width: 100%;
+}
+.infra-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(26,60,110,0.2); }
+.infra-icon {
+  width: 60px; height: 60px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+}
+.infra-item h4 { font-size: 0.92rem; font-weight: 600; }
+.infra-item p  { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .mission-grid  { grid-template-columns: 1fr; }
+  .story-grid    { grid-template-columns: 1fr; gap: 40px; }
+  .faculty-top   { flex-direction: column; padding: 32px 28px; text-align: center; }
+  .faculty-credentials { justify-content: center; }
+  .faculty-body  { grid-template-columns: 1fr; padding: 28px; gap: 28px; }
+  .faculty-stats { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .story-image-badge { right: 0; bottom: 0; }
+  .faculty-top { padding: 24px 20px; }
+  .faculty-avatar-lg { width: 110px; height: 110px; font-size: 2.2rem; }
+  .faculty-body { padding: 20px; }
+  .cred-badge { font-size: 0.75rem; padding: 6px 10px; }
+}
+
+@media (max-width: 480px) {
+  .mission-card { padding: 24px 20px; }
+  .faculty-top  { gap: 24px; }
+  .faculty-avatar-lg { width: 90px; height: 90px; font-size: 1.8rem; }
+  .faculty-body { padding: 16px; }
+  .faculty-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .fstat        { padding: 14px; }
+  .fstat strong { font-size: 1.5rem; }
+  .cred-badge   { font-size: 0.72rem; padding: 5px 8px; gap: 5px; }
+  .story-grid   { gap: 28px; }
+  .story-image-badge { padding: 10px 14px; }
+  .story-image-badge .badge-num { font-size: 1.4rem; }
+}

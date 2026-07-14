@@ -1,0 +1,182 @@
+/* ============================================================
+   APEX COMPUTER INSTITUTE — admission.css
+   Note: Generic form styles (.form-group, .form-control, etc.)
+   are now in style.css (shared). Only admission-specific here.
+   ============================================================ */
+
+.admission-section { background: var(--bg); }
+
+/* ── Process Steps ────────────────────────────────────────── */
+.steps-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-bottom: 48px;
+  position: relative;
+}
+.steps-row::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(12.5% + 16px);
+  right: calc(12.5% + 16px);
+  height: 2px;
+  background: linear-gradient(to right, var(--secondary), rgba(245,166,35,0.2));
+  z-index: 0;
+}
+.step-item {
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  gap: 12px; padding: 0 12px;
+  position: relative; z-index: 1;
+}
+.step-num {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--secondary); color: #fff;
+  font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(245,166,35,0.35);
+  flex-shrink: 0;
+}
+.step-title { font-family: var(--font-heading); font-size: 0.88rem; font-weight: 700; color: var(--text-primary); }
+.step-desc  { font-size: 0.76rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* ── Admission Form Card ──────────────────────────────────── */
+.admission-form-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+.afc-header {
+  background: linear-gradient(135deg, #0A1520, #1A3C6E);
+  padding: 28px 36px;
+}
+.afc-header h2 { color: #fff; margin-bottom: 6px; }
+.afc-header p  { color: rgba(255,255,255,0.72); font-size: 0.88rem; }
+.afc-body { padding: 36px; }
+
+.form-section-title {
+  font-family: var(--font-heading);
+  font-size: 0.92rem; font-weight: 700;
+  color: var(--primary);
+  margin: 28px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.form-section-title:first-child { margin-top: 0; }
+
+/* Grid layouts — form-specific */
+.form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* Radio group */
+.radio-group { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 6px; }
+.radio-option { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.radio-option input[type="radio"] { accent-color: var(--primary); width: 16px; height: 16px; cursor: pointer; }
+.radio-option span { font-size: 0.88rem; color: var(--text-secondary); }
+
+/* Checkbox */
+.checkbox-group { display: flex; align-items: flex-start; gap: 12px; }
+.checkbox-group input[type="checkbox"] { accent-color: var(--primary); width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+.checkbox-label { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.6; cursor: pointer; }
+.checkbox-label strong { color: var(--text-primary); }
+
+/* Submit row */
+.form-submit-row {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-top: 28px; padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.submit-btn-main {
+  flex: 1; padding: 14px;
+  border-radius: var(--radius-sm);
+  background: var(--primary); color: #fff;
+  font-family: var(--font-heading); font-size: 1rem; font-weight: 700;
+  cursor: pointer; border: none;
+  transition: all var(--transition);
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  min-width: 160px;
+}
+.submit-btn-main:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,60,110,0.3); }
+.reset-btn {
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  background: transparent; color: var(--text-secondary);
+  font-family: var(--font-heading); font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; border: 2px solid var(--border);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.reset-btn:hover { border-color: var(--danger); color: var(--danger); }
+
+/* ── Fee Table ────────────────────────────────────────────── */
+.fee-table-section { background: var(--bg-alt); }
+.fee-table-wrap {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.fee-table { width: 100%; border-collapse: collapse; min-width: 480px; }
+.fee-table th {
+  background: var(--primary); color: #fff;
+  padding: 14px 18px;
+  font-family: var(--font-heading); font-size: 0.86rem; font-weight: 700;
+  text-align: left;
+}
+.fee-table td {
+  padding: 12px 18px;
+  font-size: 0.86rem; color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+.fee-table tr:last-child td { border-bottom: none; }
+.fee-table tr:hover td { background: rgba(245,166,35,0.04); }
+.fee-table td:first-child { font-family: var(--font-heading); font-weight: 600; color: var(--text-primary); }
+.fee-highlight { color: var(--secondary); font-weight: 700; font-family: var(--font-heading); }
+
+/* ── Print Styles ─────────────────────────────────────────── */
+@media print {
+  .navbar, .footer, .whatsapp-float, .scroll-top,
+  .toast-container, .breadcrumb-bar, .page-hero,
+  .fee-table-section, .afc-header, .form-submit-row .reset-btn { display: none !important; }
+  body { background: #fff; color: #000; }
+  .afc-body { padding: 20px 0; }
+  .admission-form-card { box-shadow: none; border: none; }
+  .form-control { border: 1px solid #ccc !important; background: #fff !important; }
+  .steps-row { display: none; }
+  h2 { color: #000 !important; }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .steps-row      { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .steps-row::before { display: none; }
+  .form-row-3     { grid-template-columns: 1fr 1fr; }
+  .afc-body       { padding: 28px; }
+  .afc-header     { padding: 24px 28px; }
+}
+@media (max-width: 600px) {
+  .steps-row      { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-row-3     { grid-template-columns: 1fr; }
+  .form-row-2     { grid-template-columns: 1fr; }
+  .afc-body       { padding: 20px; }
+  .afc-header     { padding: 20px; }
+  .form-submit-row { flex-direction: column; }
+  .submit-btn-main { width: 100%; min-width: auto; }
+  .reset-btn       { width: 100%; text-align: center; }
+}
+@media (max-width: 480px) {
+  .afc-body   { padding: 16px; }
+  .afc-header { padding: 16px; }
+  .step-num   { width: 44px; height: 44px; font-size: 1rem; }
+  .step-title { font-size: 0.8rem; }
+  .step-desc  { font-size: 0.72rem; }
+  .form-section-title { font-size: 0.85rem; margin: 20px 0 12px; }
+  .radio-group { gap: 12px; }
+}
